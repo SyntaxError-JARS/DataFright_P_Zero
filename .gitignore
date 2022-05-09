@@ -1,0 +1,7 @@
+whatdadogdoin.iml
+src/resources/thelayout.txt
+.idea/
+out/
+src/com/revature/whatdadogdoin/models/Pokemon
+src/com/revature/whatdadogdoin/models/Trainer
+src/resources/data.txt
