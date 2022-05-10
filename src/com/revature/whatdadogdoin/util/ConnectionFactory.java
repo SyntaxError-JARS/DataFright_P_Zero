@@ -1,16 +1,25 @@
 package com.revature.whatdadogdoin.util;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionFactory {
 
     private static final ConnectionFactory connectionFactory = new ConnectionFactory();
 
+    private Properties prop = new Properties();
+
     private ConnectionFactory(){
 
-
+        try {
+            prop.load(new FileReader("src/resources/db.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     static {
@@ -29,12 +38,9 @@ public class ConnectionFactory {
 
         Connection conn = null;
 
-        String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=project_zero";
-        String user = "postgres";
-        String password = "password";
 
         try {
-            conn = DriverManager.getConnection(url, user, password);
+            conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("user"), prop.getProperty("password"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
