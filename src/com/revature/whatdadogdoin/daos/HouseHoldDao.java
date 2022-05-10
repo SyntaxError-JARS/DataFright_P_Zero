@@ -77,8 +77,31 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
     }
 
     @Override
-    public HouseHoldAccount findById(String id) {
-        return null;
+    public HouseHoldAccount findById(String username) {
+
+        try(Connection conn = ConnectionFactory.getInstance().getConnection();){
+
+            String sql = "select * from household_account where household_username = ?";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+
+            HouseHoldAccount houseHoldAccount = new HouseHoldAccount();
+
+            houseHoldAccount.setHouseHoldUsername(rs.getString("household_username"));
+            houseHoldAccount.setHouseHoldName(rs.getString("household_name"));
+            houseHoldAccount.setPassWord(rs.getString("password"));
+            houseHoldAccount.setLocation(rs.getString("location"));
+
+            return houseHoldAccount;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+
     }
 
     @Override
