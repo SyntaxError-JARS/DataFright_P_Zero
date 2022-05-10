@@ -2,7 +2,8 @@ whatdadogdoin.iml
 src/resources/thelayout.txt
 .idea/
 out/
-src/com/revature/whatdadogdoin/models/Pokemon
-src/com/revature/whatdadogdoin/models/Trainer
+src/com/revature/whatdadogdoin/models/Pokemon.java
+src/com/revature/whatdadogdoin/models/Trainer.java
 src/resources/data.txt
 src/resources/db.properties
+src/resources/test
