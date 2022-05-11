@@ -3,6 +3,7 @@ package com.revature.whatdadogdoin.menus;
 import com.revature.whatdadogdoin.models.HouseHoldAccount;
 import com.revature.whatdadogdoin.services.HouseHoldServices;
 import com.revature.whatdadogdoin.menus.RegisterMenu;
+import com.revature.whatdadogdoin.util.logging.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,6 +15,7 @@ public class WelcomeMenu extends Menu{
 
     private HouseHoldServices houseHoldServices;
     private RegisterMenu registerMenu;
+    private final Logger logger = Logger.getLogger(true);
 
     public WelcomeMenu(BufferedReader terminalReader, HouseHoldServices houseHoldServices) {
         super("Welcome","/welcome", terminalReader);
@@ -39,7 +41,7 @@ public class WelcomeMenu extends Menu{
 
         switch (userSelection) {
             case "1":
-                System.out.println("User has selected login...");
+                logger.info("User has selected login...");
                 break;
             case "2":
                 System.out.println("User has selected register...");
@@ -55,6 +57,7 @@ public class WelcomeMenu extends Menu{
             case "5":
                 System.out.println("User has selected exit...");
                 shutdown();
+                logger.info("Application shutting down");
                 break;
             default:
                 System.out.println("No valid user input provide");

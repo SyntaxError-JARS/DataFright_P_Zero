@@ -1,6 +1,8 @@
 package com.revature.whatdadogdoin.services;
 
 import com.revature.whatdadogdoin.daos.HouseHoldDao;
+import com.revature.whatdadogdoin.exceptions.InvalidRequestException;
+import com.revature.whatdadogdoin.exceptions.ResourcePersistenceException;
 import com.revature.whatdadogdoin.models.HouseHoldAccount;
 
 import java.io.BufferedReader;
@@ -36,13 +38,13 @@ public class HouseHoldServices {
     public boolean registerHouseHoldAccount(HouseHoldAccount newHouseHoldAccount){
         if(!validateHouseHoldAccount(newHouseHoldAccount)){
             System.out.println("User was not validated");
-            throw new RuntimeException();
+            throw new InvalidRequestException("User input was not validated, either empty string or null values");
         }
 
-        HouseHoldAccount presistedHouseHoldAccount = houseHoldDao.create(newHouseHoldAccount);
+        HouseHoldAccount persistedHouseHoldAccount = houseHoldDao.create(newHouseHoldAccount);
 
-        if (presistedHouseHoldAccount == null){
-            throw new RuntimeException();
+        if (persistedHouseHoldAccount == null){
+            throw new ResourcePersistenceException("Trainer was not persisted to the database upon registration");
         }
 
         return true;

@@ -3,6 +3,7 @@ package com.revature.whatdadogdoin.util;
 import com.revature.whatdadogdoin.menus.RegisterMenu;
 import com.revature.whatdadogdoin.menus.WelcomeMenu;
 import com.revature.whatdadogdoin.services.HouseHoldServices;
+import com.revature.whatdadogdoin.util.logging.Logger;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -12,11 +13,15 @@ public class AppState {
     private static boolean isRunning;
     private WelcomeMenu welcomeMenu;
     private RegisterMenu registerMenu;
+    private final Logger logger;
 
     //private final MenuRouter router;
 
     public AppState() {
-        System.out.println("Generating instance of AppState");
+
+        logger = Logger.getLogger(true);
+
+        logger.log("Generating instance of AppState");
         isRunning = true;
         BufferedReader terminalReader = new BufferedReader(new InputStreamReader(System.in));
         HouseHoldServices houseHoldServices = new HouseHoldServices();
@@ -29,7 +34,7 @@ public class AppState {
     public void startup(){
         try {
             while (isRunning) {
-                System.out.println("App successfully started");
+                logger.info("App successfully started");
                 welcomeMenu.render();
             }
         } catch (Exception e) {
@@ -39,7 +44,6 @@ public class AppState {
 
     public static void shutdown(){
         isRunning = false;
-        System.out.println("App shutting down");
     }
 
 }
