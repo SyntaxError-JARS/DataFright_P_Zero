@@ -1,7 +1,8 @@
 whatdadogdoin.iml
-src/resources/thelayout.txt
 .idea/
 out/
-src/resources/data.txt
-src/resources/db.properties
-src/resources/test
+src/main/java/resources/data.txt
+src/main/java/resources/db.properties
+src/main/java/resources/postgresql-42.3.3.jar
+src/main/java/resources/test
+src/main/java/resources/thelayout.txt

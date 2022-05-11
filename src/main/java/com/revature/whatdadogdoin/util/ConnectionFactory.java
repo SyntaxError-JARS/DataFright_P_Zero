@@ -16,7 +16,7 @@ public class ConnectionFactory {
     private ConnectionFactory(){
 
         try {
-            prop.load(new FileReader("src/resources/db.properties"));
+            prop.load(new FileReader("src/main/java/resources/db.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }

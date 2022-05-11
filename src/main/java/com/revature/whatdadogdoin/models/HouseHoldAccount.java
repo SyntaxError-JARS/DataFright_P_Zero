@@ -54,10 +54,10 @@ public class HouseHoldAccount {
     @Override
     public String toString() {
         return "HouseHoldAccount{" +
-                "houseHoldUsername='" + houseHoldUsername + '\'' +
-                ", houseHoldName='" + houseHoldName + '\'' +
-                ", passWord='" + passWord + '\'' +
-                ", location='" + location + '\'' +
+                "Username = '" + houseHoldUsername + '\'' +
+                ", Household Name = '" + houseHoldName + '\'' +
+                ", Password = '" + "*********" + '\'' +
+                ", Location = '" + location + '\'' +
                 '}';
     }
 
