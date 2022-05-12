@@ -6,20 +6,19 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.mockito.Mockito.*;
+
 public class HouseHoldServicesTestSuite {
 
     HouseHoldServices sut;
-    HouseHoldDao tut;
+    HouseHoldDao mockHouseHoldDoa;
 
     @BeforeEach
     public void testPrep(){
+        mockHouseHoldDoa = mock(HouseHoldDao.class);
         sut = new HouseHoldServices();
     }
 
-    @BeforeEach
-    public void testPrep2(){
-        tut = new HouseHoldDao();
-    }
 
     @Test
     public void test_validateInput_givenValidAccount_returnTrue(){
@@ -35,14 +34,16 @@ public class HouseHoldServicesTestSuite {
     @Test
     public void test_create_givenValidUser_returnsAccount(){
 
-        HouseHoldAccount account = new HouseHoldAccount("valid", "valid", "valid", "valid");
+        HouseHoldAccount account = new HouseHoldAccount("test", "test", "test", "test");
+        when(mockHouseHoldDoa.create(account)).thenReturn(account);
 
-        HouseHoldAccount actualAccount = tut.create(account);
+        HouseHoldAccount actualAccount = mockHouseHoldDoa.create(account);
 
-        Assertions.assertEquals("valid", actualAccount.getHouseHoldUsername());
-        Assertions.assertEquals("valid", actualAccount.getHouseHoldName());
-        Assertions.assertEquals("valid", actualAccount.getPassWord());
-        Assertions.assertEquals("valid", actualAccount.getLocation());
+        Assertions.assertEquals("test", actualAccount.getHouseHoldUsername());
+        Assertions.assertEquals("test", actualAccount.getHouseHoldName());
+        Assertions.assertEquals("test", actualAccount.getPassWord());
+        Assertions.assertEquals("test", actualAccount.getLocation());
+        verify(mockHouseHoldDoa, times(1)).create(account);
 
     }
 
