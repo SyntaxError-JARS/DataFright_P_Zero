@@ -50,7 +50,7 @@ public class HouseHoldServices {
         return true;
     }
 
-    private boolean validateHouseHoldAccount(HouseHoldAccount newHouseHoldAccount){
+    public boolean validateHouseHoldAccount(HouseHoldAccount newHouseHoldAccount){
         if(newHouseHoldAccount == null) return false;
         if (newHouseHoldAccount.getHouseHoldUsername() == null || newHouseHoldAccount.getHouseHoldUsername().trim().equals("")) return false;
         if (newHouseHoldAccount.getHouseHoldName() == null || newHouseHoldAccount.getHouseHoldName().trim().equals("")) return false;
@@ -59,4 +59,5 @@ public class HouseHoldServices {
 
         return true;
     }
+
 }
