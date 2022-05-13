@@ -5,6 +5,7 @@ import com.revature.whatdadogdoin.exceptions.InvalidRequestException;
 import com.revature.whatdadogdoin.exceptions.ResourcePersistenceException;
 import com.revature.whatdadogdoin.models.HouseHoldAccount;
 
+import javax.naming.AuthenticationException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -60,4 +61,22 @@ public class HouseHoldServices {
         return true;
     }
 
+    public HouseHoldAccount authenticateAccount(String username, String password) {
+
+        if (password == null || password.trim().equals("") || username == null || username.trim().equals("")) {
+            throw new InvalidRequestException("Either username or password is an invalid entry. Please try logging in again");
+        }
+
+        HouseHoldAccount authenticateAccount = houseHoldDao.authenticateAccount(username, password);
+
+        if (authenticateAccount == null) {
+            try {
+                throw new AuthenticationException("Unauthenticated user, information provided was not consistent with our database.");
+            } catch (AuthenticationException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return authenticateAccount;
+    }
 }

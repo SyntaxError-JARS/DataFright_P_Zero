@@ -114,4 +114,36 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
     public boolean delete(String id) {
         return false;
     }
+
+    public HouseHoldAccount authenticateAccount(String username, String password){
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()){
+            String sql = "select * from trainer where email = ? and password = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            ps.setString(2, password);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(!rs.next()){
+                return null;
+            }
+
+            HouseHoldAccount account = new HouseHoldAccount();
+
+            account.setHouseHoldUsername(rs.getString("household_username")); // this column lable MUST MATCH THE DB
+            account.setHouseHoldName(rs.getString("household_name"));
+            account.setPassWord(rs.getString("password"));
+            account.setLocation(rs.getString("location"));
+
+            return account;
+
+        } catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+
+
+    }
+
 }
