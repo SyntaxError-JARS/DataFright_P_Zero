@@ -115,7 +115,7 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
         return false;
     }
 
-    public static HouseHoldAccount authenticateAccount(String username, String password){
+    public HouseHoldAccount authenticateAccount(String username, String password){
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()){
             String sql = "select * from household_account where household_username = ? and password = ?";

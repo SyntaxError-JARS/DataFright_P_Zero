@@ -65,7 +65,7 @@ public class HouseHoldServices {
             throw new InvalidRequestException("Either username or password is an invalid entry. Please try logging in again");
         }
 
-        HouseHoldAccount authenticatedAccount = HouseHoldDao.authenticateAccount(username, password);
+        HouseHoldAccount authenticatedAccount = houseHoldDao.authenticateAccount(username, password);
 
         if (authenticatedAccount == null){
             throw new AuthenticationException("Unauthenticated user, information provided was not consistent with our database.");
