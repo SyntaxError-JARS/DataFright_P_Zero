@@ -25,11 +25,9 @@ public class HouseHoldServicesAuthLoginTestSuite {
     @Test
     public void testValidPasswordUsernameLogin_returnString() throws AuthenticationException {
 
-        //HouseHoldAccount account = sut.authenticateAccount("test", "test");
-        HouseHoldAccount actualResult = tut.authenticateAccount("test", "test");
+        HouseHoldAccount actualResult = tut.authenticateAccount("mattman", "pasw0rd");
 
         System.out.println("");
-        //System.out.println(account);
         System.out.println(actualResult);
     }
 

@@ -34,7 +34,7 @@ public class HouseHoldServicesTestSuite {
     @Test
     public void test_create_givenValidUser_returnsAccount(){
 
-        HouseHoldAccount account = new HouseHoldAccount("test", "test", "test", "test");
+            HouseHoldAccount account = new HouseHoldAccount("test", "test", "test", "test");
         when(mockHouseHoldDoa.create(account)).thenReturn(account);
 
         HouseHoldAccount actualAccount = mockHouseHoldDoa.create(account);

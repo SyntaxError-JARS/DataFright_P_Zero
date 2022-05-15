@@ -26,8 +26,10 @@ public class AuthServlet extends HttpServlet {
 
         try {
             HouseHoldAccount reqAccount = mapper.readValue(req.getInputStream(), HouseHoldAccount.class);
-            HouseHoldAccount authAccount = null;
-            authAccount = houseHoldServices.authenticateAccount(reqAccount.getHouseHoldUsername(), reqAccount.getPassWord());
+
+            HouseHoldAccount authAccount = houseHoldServices.authenticateAccount(reqAccount.getHouseHoldUsername(), reqAccount.getPassWord());
+
+            //authAccount = houseHoldServices.authenticateAccount(reqAccount.getHouseHoldUsername(), reqAccount.getPassWord());
 
             HttpSession httpSession = req.getSession(true);
             httpSession.setAttribute("authAccount", authAccount);
