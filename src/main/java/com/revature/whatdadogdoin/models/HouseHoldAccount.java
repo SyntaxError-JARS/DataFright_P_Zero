@@ -38,19 +38,6 @@ public class HouseHoldAccount {
 
 
 
-    public String toFileString() {
-        StringBuilder mutableString = new StringBuilder();
-        mutableString
-                .append(houseHoldUsername).append(",")
-                .append(houseHoldName).append(",")
-                .append(passWord).append(",")
-                .append(location);
-
-        return mutableString.toString();
-    }
-
-
-
     @Override
     public String toString() {
         return "HouseHoldAccount{" +

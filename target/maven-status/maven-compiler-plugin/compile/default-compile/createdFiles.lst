@@ -1,11 +1,10 @@
 com\revature\whatdadogdoin\daos\HouseHoldDao.class
 com\revature\whatdadogdoin\web\servlets\AuthServlet.class
-com\revature\whatdadogdoin\excetpion\AuthenticationException.class
 com\revature\whatdadogdoin\util\logging\Logger.class
-com\revature\whatdadogdoin\excetpion\InvalidRequestException.class
 com\revature\whatdadogdoin\services\HouseHoldServices.class
 com\revature\whatdadogdoin\exceptions\InvalidRequestException.class
 com\revature\whatdadogdoin\daos\Crundable.class
+com\revature\whatdadogdoin\exceptions\AuthenticationException.class
 com\revature\whatdadogdoin\util\ConnectionFactory.class
 com\revature\whatdadogdoin\models\HouseHoldAccount.class
 com\revature\whatdadogdoin\exceptions\ResourcePersistenceException.class

@@ -138,7 +138,7 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
 
             return account;
 
-        } catch (SQLException | ExceptionInInitializerError e){
+        } catch (SQLException e){
             e.printStackTrace();
             return null;
         }

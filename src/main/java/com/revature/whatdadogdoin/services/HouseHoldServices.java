@@ -4,10 +4,8 @@ import com.revature.whatdadogdoin.daos.HouseHoldDao;
 import com.revature.whatdadogdoin.exceptions.InvalidRequestException;
 import com.revature.whatdadogdoin.exceptions.ResourcePersistenceException;
 import com.revature.whatdadogdoin.models.HouseHoldAccount;
-import com.revature.whatdadogdoin.excetpion.AuthenticationException;
+import com.revature.whatdadogdoin.exceptions.AuthenticationException;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class HouseHoldServices {
@@ -61,18 +59,20 @@ public class HouseHoldServices {
         return true;
     }
 
-    public HouseHoldAccount authenticateAccount(String username, String password) throws AuthenticationException {
+    public HouseHoldAccount authenticateAccount(String username, String password){
 
-        if (password == null || password.trim().equals("") || username == null || username.trim().equals("")) {
+        if(username == null || username.trim().equals("") || password == null || password.trim().equals("")) {
             throw new InvalidRequestException("Either username or password is an invalid entry. Please try logging in again");
         }
 
-        HouseHoldAccount authenticatedAccount = houseHoldDao.authenticateAccount(username, password);
+        HouseHoldAccount authenticatedAccount = HouseHoldDao.authenticateAccount(username, password);
 
         if (authenticatedAccount == null){
             throw new AuthenticationException("Unauthenticated user, information provided was not consistent with our database.");
         }
 
         return authenticatedAccount;
+
     }
+
 }

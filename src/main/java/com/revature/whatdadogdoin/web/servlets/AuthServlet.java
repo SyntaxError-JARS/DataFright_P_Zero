@@ -2,8 +2,8 @@ package com.revature.whatdadogdoin.web.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.whatdadogdoin.daos.HouseHoldDao;
-import com.revature.whatdadogdoin.excetpion.AuthenticationException;
-import com.revature.whatdadogdoin.excetpion.InvalidRequestException;
+import com.revature.whatdadogdoin.exceptions.AuthenticationException;
+import com.revature.whatdadogdoin.exceptions.InvalidRequestException;
 import com.revature.whatdadogdoin.models.HouseHoldAccount;
 import com.revature.whatdadogdoin.services.HouseHoldServices;
 
@@ -21,6 +21,7 @@ public class AuthServlet extends HttpServlet {
     private final HouseHoldDao houseHoldDao = new HouseHoldDao();
     private final ObjectMapper mapper = new ObjectMapper();
 
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         try {
@@ -43,14 +44,3 @@ public class AuthServlet extends HttpServlet {
     }
 
 }
-
-//@WebServlet("/auth")
-//public class AuthServlet extends HttpServlet {
-//
-//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-//
-//        resp.getWriter().write("<h1>Test Authing Auth this Servlet is working as intended for What-Da-Dog-Doin'</h1>");
-//
-//    }
-//
-//}
