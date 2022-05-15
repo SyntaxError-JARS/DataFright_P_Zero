@@ -6,14 +6,24 @@
 
     <display-name>Hello, Servlets!</display-name>
 
-    <servlet>
-        <servlet-name>TestServlet</servlet-name>
-        <servlet-class>com.revature.whatdadogdoin.web.servlets.TestServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>TestServlet</servlet-name>-->
+<!--        <servlet-class>com.revature.whatdadogdoin.web.servlets.TestServlet</servlet-class>-->
+<!--    </servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/test</url-pattern>
-    </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>TestServlet</servlet-name>-->
+<!--        <url-pattern>/test</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>AuthServlet</servlet-name>-->
+<!--        <servlet-class>com.revature.whatdadogdoin.web.servlets.AuthServlet</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>AuthServlet</servlet-name>-->
+<!--        <url-pattern>/auth</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 </web-app>

@@ -115,10 +115,10 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
         return false;
     }
 
-    public HouseHoldAccount authenticateAccount(String username, String password){
+    public static HouseHoldAccount authenticateAccount(String username, String password){
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()){
-            String sql = "select * from trainer where email = ? and password = ?";
+            String sql = "select * from household_account where household_username = ? and password = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, username);
             ps.setString(2, password);
@@ -138,7 +138,7 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
 
             return account;
 
-        } catch (SQLException e){
+        } catch (SQLException | ExceptionInInitializerError e){
             e.printStackTrace();
             return null;
         }
