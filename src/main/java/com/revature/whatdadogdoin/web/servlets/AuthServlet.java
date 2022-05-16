@@ -21,7 +21,7 @@ public class AuthServlet extends HttpServlet {
     private final HouseHoldDao houseHoldDao = new HouseHoldDao();
     private final ObjectMapper mapper = new ObjectMapper();
 
-    @Override
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         try {

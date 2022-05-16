@@ -10,13 +10,13 @@ import java.util.Properties;
 public class ConnectionFactory {
 
     private static final ConnectionFactory connectionFactory = new ConnectionFactory();
-
     private Properties prop = new Properties();
 
     private ConnectionFactory(){
         try {
-            prop.load(new FileReader("src/main/java/resources/db.properties"));
-        } catch (IOException e) {
+            ClassLoader loader = Thread.currentThread().getContextClassLoader();
+            prop.load(loader.getResourceAsStream("db.properties"));
+        } catch (IOException e){
             e.printStackTrace();
         }
     }
