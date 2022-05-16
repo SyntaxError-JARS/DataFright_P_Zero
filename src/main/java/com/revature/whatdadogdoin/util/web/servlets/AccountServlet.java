@@ -12,13 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/accounts")
 public class AccountServlet extends HttpServlet {
 
-    private final HouseHoldServices houseHoldServices = new HouseHoldServices();
-    private final HouseHoldDao houseHoldDao = new HouseHoldDao();
-    private final ObjectMapper mapper = new ObjectMapper();
+    private final HouseHoldServices houseHoldServices;
+    private final HouseHoldDao houseHoldDao;
+    private final ObjectMapper mapper;
 
+    public AccountServlet(HouseHoldServices houseHoldServices, HouseHoldDao houseHoldDao, ObjectMapper mapper) {
+        this.houseHoldServices = houseHoldServices;
+        this.houseHoldDao = houseHoldDao;
+        this.mapper = mapper;
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

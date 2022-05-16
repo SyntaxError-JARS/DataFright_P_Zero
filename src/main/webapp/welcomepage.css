@@ -1,0 +1,60 @@
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+}
+
+.flex-container2 {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 125px;
+}
+
+.mydogs {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width:  300px;
+    height: 300px;
+    justify-content: center;
+  }  
+
+.text {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #F0FFFF;
+    text-shadow: 5px 4px 4px #000000;
+    margin-top: 125px;
+    text-decoration: underline;
+}
+
+@keyframes backgroundColorPalette {
+    0% {
+      background: #8B0000;
+    }
+    25% {
+      background: #8A2BE2;
+    }
+    50% {
+      background: #00CED1;
+    }
+    75% {
+      background: #8B008B;
+    }
+    100% {
+      background: #DC143C;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }

@@ -6,9 +6,9 @@ com\revature\whatdadogdoin\exceptions\AuthenticationException.class
 com\revature\whatdadogdoin\util\web\dto\LoginCreds.class
 com\revature\whatdadogdoin\util\web\servlets\AuthServlet.class
 com\revature\whatdadogdoin\util\ConnectionFactory.class
-com\revature\whatdadogdoin\util\web\servlets\TestAccessServlet.class
 com\revature\whatdadogdoin\exceptions\ResourcePersistenceException.class
 com\revature\whatdadogdoin\daos\HouseHoldDao.class
 com\revature\whatdadogdoin\util\web\servlets\AccountServlet.class
+com\revature\whatdadogdoin\util\web\util\ContextLoaderListener.class
 com\revature\whatdadogdoin\services\HouseHoldServices.class
 com\revature\whatdadogdoin\models\HouseHoldAccount.class

@@ -15,12 +15,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/auth")
 public class AuthServlet extends HttpServlet {
 
-    private final HouseHoldServices houseHoldServices = new HouseHoldServices();
-    private final HouseHoldDao houseHoldDao = new HouseHoldDao();
-    private final ObjectMapper mapper = new ObjectMapper();
+    private final HouseHoldServices houseHoldServices;
+    private final HouseHoldDao houseHoldDao;
+    private final ObjectMapper mapper;
+
+    public AuthServlet(HouseHoldServices houseHoldServices, HouseHoldDao houseHoldDao, ObjectMapper mapper){
+        this.houseHoldServices = houseHoldServices;
+        this.mapper = mapper;
+        this.houseHoldDao = houseHoldDao;
+    }
 
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
