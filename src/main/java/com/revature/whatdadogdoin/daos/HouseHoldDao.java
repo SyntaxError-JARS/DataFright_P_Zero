@@ -41,7 +41,7 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
     public HouseHoldAccount[] findAll() throws IOException {
 
 
-        HouseHoldAccount[] accounts = new HouseHoldAccount[10];
+        HouseHoldAccount[] accounts = new HouseHoldAccount[20];
 
         int index = 0;
 

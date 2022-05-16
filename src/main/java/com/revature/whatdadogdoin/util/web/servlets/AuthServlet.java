@@ -1,4 +1,4 @@
-package com.revature.whatdadogdoin.web.servlets;
+package com.revature.whatdadogdoin.util.web.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.whatdadogdoin.daos.HouseHoldDao;
@@ -6,6 +6,7 @@ import com.revature.whatdadogdoin.exceptions.AuthenticationException;
 import com.revature.whatdadogdoin.exceptions.InvalidRequestException;
 import com.revature.whatdadogdoin.models.HouseHoldAccount;
 import com.revature.whatdadogdoin.services.HouseHoldServices;
+import com.revature.whatdadogdoin.util.web.dto.LoginCreds;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,22 +26,24 @@ public class AuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         try {
-            HouseHoldAccount reqAccount = mapper.readValue(req.getInputStream(), HouseHoldAccount.class);
+            //HouseHoldAccount reqAccount = mapper.readValue(req.getInputStream(), HouseHoldAccount.class);
 
-            HouseHoldAccount authAccount = houseHoldServices.authenticateAccount(reqAccount.getHouseHoldUsername(), reqAccount.getPassWord());
+            LoginCreds loginCreds = mapper.readValue(req.getInputStream(),LoginCreds.class);
+
+            HouseHoldAccount authAccount = houseHoldServices.authenticateAccount(loginCreds.getHouseHoldUsername(), loginCreds.getPassWord());
 
             //authAccount = houseHoldServices.authenticateAccount(reqAccount.getHouseHoldUsername(), reqAccount.getPassWord());
 
             HttpSession httpSession = req.getSession(true);
             httpSession.setAttribute("authAccount", authAccount);
 
-            resp.setStatus(69);
             resp.getWriter().write("You have successfully logged in!");
+            resp.setStatus(200);
         } catch (AuthenticationException | InvalidRequestException e){
             resp.setStatus(403);
             resp.getWriter().write(e.getMessage());
         } catch (Exception e){
-            resp.setStatus(420);
+            resp.setStatus(413);
             resp.getWriter().write(e.getMessage());
         }
     }

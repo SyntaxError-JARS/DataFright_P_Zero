@@ -1,4 +1,4 @@
-package com.revature.whatdadogdoin.web.servlets;
+package com.revature.whatdadogdoin.util.web.servlets;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
