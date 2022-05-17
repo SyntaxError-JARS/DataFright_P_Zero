@@ -104,6 +104,29 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
 
     }
 
+    public boolean delete(String userName){
+        Connection conn = ConnectionFactory.getInstance().getConnection();{
+            String sql = "delete from household_account where household_username = ?";
+
+            try {
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1, userName);
+
+                int checkInsert = ps.executeUpdate();
+
+                if (checkInsert == 0){
+                    throw new RuntimeException();
+                }
+
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return false;
+    }
+
     public HouseHoldAccount returnUpdate(String newName, String oldName){
         Connection conn = ConnectionFactory.getInstance().getConnection();
         {
@@ -148,11 +171,6 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
             }
 
         }
-        return false;
-    }
-
-    @Override
-    public boolean delete(String id) {
         return false;
     }
 

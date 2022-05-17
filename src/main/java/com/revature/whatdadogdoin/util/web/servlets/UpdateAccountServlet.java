@@ -24,12 +24,9 @@ public class UpdateAccountServlet extends HttpServlet {
         this.mapper = mapper;
     }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-
-        //LoginCreds loginCreds = mapper.readValue(req.getInputStream(),LoginCreds.class);
         UpdatePassIn updatePassIn = mapper.readValue(req.getInputStream(),UpdatePassIn.class);
-        //HouseHoldAccount updatedAccount = mapper.readValue(req.getInputStream(), HouseHoldAccount.class);
         HouseHoldAccount persistedAccountUpdate = houseHoldDao.returnUpdate(updatePassIn.getNewName(), updatePassIn.getOldName());
 
         String payload = mapper.writeValueAsString(persistedAccountUpdate);

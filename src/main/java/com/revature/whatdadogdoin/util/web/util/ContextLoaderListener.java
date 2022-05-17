@@ -24,6 +24,7 @@ public class ContextLoaderListener implements ServletContextListener {
         TestServlet testServlet = new TestServlet();
         CreateServlet createServlet = new CreateServlet(houseHoldServices, houseHoldDao, mapper);
         UpdateAccountServlet updateAccountServlet = new UpdateAccountServlet(houseHoldServices, houseHoldDao, mapper);
+        DeleteServlet deleteServlet = new DeleteServlet(houseHoldDao, mapper);
 
         ServletContext context = sce.getServletContext();
         context.addServlet("AuthServlet", authServlet).addMapping("/auth");
@@ -31,6 +32,7 @@ public class ContextLoaderListener implements ServletContextListener {
         context.addServlet("TestServlet", testServlet).addMapping("/test");
         context.addServlet("CreateServlet", createServlet).addMapping("/create");
         context.addServlet("UpdateAccountServlet", updateAccountServlet).addMapping("/update");
+        context.addServlet("DeleteServlet", deleteServlet).addMapping("/delete");
 
     }
 
