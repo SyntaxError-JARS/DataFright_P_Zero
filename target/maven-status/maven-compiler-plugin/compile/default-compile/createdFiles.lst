@@ -1,4 +1,5 @@
 com\revature\whatdadogdoin\util\logging\Logger.class
+com\revature\whatdadogdoin\util\web\servlets\UpdateAccountServlet.class
 com\revature\whatdadogdoin\exceptions\InvalidRequestException.class
 com\revature\whatdadogdoin\util\web\servlets\TestServlet.class
 com\revature\whatdadogdoin\daos\Crundable.class
@@ -12,5 +13,6 @@ com\revature\whatdadogdoin\daos\HouseHoldDao.class
 com\revature\whatdadogdoin\util\web\servlets\AccountServlet.class
 com\revature\whatdadogdoin\util\web\util\ContextLoaderListener.class
 com\revature\whatdadogdoin\services\HouseHoldServices.class
+com\revature\whatdadogdoin\util\web\dto\UpdatePassIn.class
 com\revature\whatdadogdoin\util\web\servlets\Authable.class
 com\revature\whatdadogdoin\models\HouseHoldAccount.class

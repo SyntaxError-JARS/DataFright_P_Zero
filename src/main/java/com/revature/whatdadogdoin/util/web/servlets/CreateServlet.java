@@ -30,7 +30,7 @@ public class CreateServlet extends HttpServlet {
 
         String payload = mapper.writeValueAsString(persistedAccount);
 
-        resp.getWriter().write("Persisted the provided pokemon as show below \n");
+        resp.getWriter().write("Persisted the provided newly created account as show below \n");
         resp.getWriter().write(payload);
         resp.setStatus(201);
 

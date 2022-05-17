@@ -104,9 +104,50 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
 
     }
 
+    public HouseHoldAccount returnUpdate(String newName, String oldName){
+        Connection conn = ConnectionFactory.getInstance().getConnection();
+        {
+            String sql = "update household_account set household_name = ? where household_name = ?";
+            try {
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1, newName);
+                ps.setString(2, oldName);
+
+                int checkInsert = ps.executeUpdate();
+
+                if (checkInsert == 0){
+                    throw new RuntimeException();
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return null;
+    }
+
     // TODO: implement update for deliverable
     @Override
-    public boolean update(HouseHoldAccount updatedObj) {
+    public boolean update(HouseHoldAccount updatedAccount) {
+
+        Connection conn = ConnectionFactory.getInstance().getConnection();
+        {
+            String sql = "update household_account set household_name = ? where household_name = ?";
+            try {
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1, updatedAccount.getHouseHoldName());
+                ps.setString(2, updatedAccount.getHouseHoldName());
+
+                ResultSet rs = ps.executeQuery();
+
+                return true;
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
         return false;
     }
 
