@@ -1,9 +1,12 @@
 package com.revature.whatdadogdoin.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class HouseHoldAccount {
 
     private String houseHoldUsername;
     private String houseHoldName;
+    @JsonIgnore
     private String passWord;
     private String location;
 

@@ -11,4 +11,5 @@ com\revature\whatdadogdoin\daos\HouseHoldDao.class
 com\revature\whatdadogdoin\util\web\servlets\AccountServlet.class
 com\revature\whatdadogdoin\util\web\util\ContextLoaderListener.class
 com\revature\whatdadogdoin\services\HouseHoldServices.class
+com\revature\whatdadogdoin\util\web\servlets\Authable.class
 com\revature\whatdadogdoin\models\HouseHoldAccount.class
