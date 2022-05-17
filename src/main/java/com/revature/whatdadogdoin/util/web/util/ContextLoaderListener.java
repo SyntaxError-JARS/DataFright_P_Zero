@@ -5,6 +5,7 @@ import com.revature.whatdadogdoin.daos.HouseHoldDao;
 import com.revature.whatdadogdoin.services.HouseHoldServices;
 import com.revature.whatdadogdoin.util.web.servlets.AccountServlet;
 import com.revature.whatdadogdoin.util.web.servlets.AuthServlet;
+import com.revature.whatdadogdoin.util.web.servlets.CreateServlet;
 import com.revature.whatdadogdoin.util.web.servlets.TestServlet;
 
 import javax.servlet.ServletContext;
@@ -24,11 +25,13 @@ public class ContextLoaderListener implements ServletContextListener {
         AuthServlet authServlet = new AuthServlet(houseHoldServices, houseHoldDao, mapper);
         AccountServlet accountServlet = new AccountServlet(houseHoldServices, houseHoldDao, mapper);
         TestServlet testServlet = new TestServlet();
+        CreateServlet createServlet = new CreateServlet(houseHoldServices, houseHoldDao, mapper);
 
         ServletContext context = sce.getServletContext();
         context.addServlet("AuthServlet", authServlet).addMapping("/auth");
         context.addServlet("AccountServlet", accountServlet).addMapping("/accounts");
         context.addServlet("TestServlet", testServlet).addMapping("/test");
+        context.addServlet("CreateServlet", createServlet).addMapping("/create");
 
     }
 

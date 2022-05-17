@@ -30,6 +30,10 @@ public class HouseHoldServices {
 
     }
 
+    public HouseHoldAccount create(HouseHoldAccount newHouseHoldAccount){
+        return houseHoldDao.create(newHouseHoldAccount);
+    }
+
     public boolean registerHouseHoldAccount(HouseHoldAccount newHouseHoldAccount) {
         if (!validateHouseHoldAccount(newHouseHoldAccount)) {
             System.out.println("User was not validated");

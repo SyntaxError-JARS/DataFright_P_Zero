@@ -5,6 +5,7 @@ com\revature\whatdadogdoin\daos\Crundable.class
 com\revature\whatdadogdoin\exceptions\AuthenticationException.class
 com\revature\whatdadogdoin\util\web\dto\LoginCreds.class
 com\revature\whatdadogdoin\util\web\servlets\AuthServlet.class
+com\revature\whatdadogdoin\util\web\servlets\CreateServlet.class
 com\revature\whatdadogdoin\util\ConnectionFactory.class
 com\revature\whatdadogdoin\exceptions\ResourcePersistenceException.class
 com\revature\whatdadogdoin\daos\HouseHoldDao.class

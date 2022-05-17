@@ -6,7 +6,7 @@ public class HouseHoldAccount {
 
     private String houseHoldUsername;
     private String houseHoldName;
-    @JsonIgnore
+    //@JsonIgnore
     private String passWord;
     private String location;
 
@@ -46,7 +46,7 @@ public class HouseHoldAccount {
         return "HouseHoldAccount{" +
                 "Username = '" + houseHoldUsername + '\'' +
                 ", Household Name = '" + houseHoldName + '\'' +
-                ", Password = '" + "*********" + '\'' +
+                ", Password = '" + passWord + '\'' +
                 ", Location = '" + location + '\'' +
                 '}';
     }
