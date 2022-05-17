@@ -17,7 +17,7 @@ public class HouseHoldAccountUpdateTestSuite {
     @Test
     public void testValidUpdateToHouseHoldAccount_returnTrue() {
 
-        HouseHoldAccount actualResults = sut.returnUpdate("changed", "valid");
+        HouseHoldAccount actualResults = sut.returnUpdate("name", "test", "test_test");
         System.out.println(actualResults);
 
     }

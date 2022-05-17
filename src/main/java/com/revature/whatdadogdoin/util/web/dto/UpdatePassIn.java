@@ -2,22 +2,31 @@ package com.revature.whatdadogdoin.util.web.dto;
 
 public class UpdatePassIn {
 
-    private String newName;
-    private String oldName;
+    private String tableSelection;
+    private String newCellName;
+    private String oldCellName;
 
-    public String getNewName() {
-        return newName;
+    public String getTableSelection() {
+        return tableSelection;
     }
 
-    public void setNewName(String newName) {
-        this.newName = newName;
+    public void setTableSelection(String tableSelection) {
+        this.tableSelection = tableSelection;
     }
 
-    public String getOldName() {
-        return oldName;
+    public String getNewCellName() {
+        return newCellName;
     }
 
-    public void setOldName(String oldName) {
-        this.oldName = oldName;
+    public void setNewCellName(String newCellName) {
+        this.newCellName = newCellName;
+    }
+
+    public String getOldCellName() {
+        return oldCellName;
+    }
+
+    public void setOldCellName(String oldCellName) {
+        this.oldCellName = oldCellName;
     }
 }

@@ -127,25 +127,81 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
         return false;
     }
 
-    public HouseHoldAccount returnUpdate(String newName, String oldName){
+    public HouseHoldAccount returnUpdate(String tableSelection, String newCellName, String oldCellName){
         Connection conn = ConnectionFactory.getInstance().getConnection();
         {
-            String sql = "update household_account set household_name = ? where household_name = ?";
-            try {
-                PreparedStatement ps = conn.prepareStatement(sql);
-                ps.setString(1, newName);
-                ps.setString(2, oldName);
+            if (tableSelection.equals("username")) {
+                String sqlUsername = "update household_account set household_username = ? where household_username = ?";
+                try {
+                    PreparedStatement ps = conn.prepareStatement(sqlUsername);
+                    ps.setString(1, newCellName);
+                    ps.setString(2, oldCellName);
 
-                int checkInsert = ps.executeUpdate();
+                    int checkInsert = ps.executeUpdate();
 
-                if (checkInsert == 0){
-                    throw new RuntimeException();
+                    if (checkInsert == 0) {
+                        throw new RuntimeException();
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
+            }
+            if (tableSelection.equals("name"))
+            {
+                String sqlHouseHoldName = "update household_account set household_name = ? where household_name = ?";
+                try {
+                    PreparedStatement ps = conn.prepareStatement(sqlHouseHoldName);
+                    ps.setString(1, newCellName);
+                    ps.setString(2, oldCellName);
 
-            } catch (SQLException e) {
-                e.printStackTrace();
+                    int checkInsert = ps.executeUpdate();
+
+                    if (checkInsert == 0) {
+                        throw new RuntimeException();
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
 
+            if (tableSelection.equals("password"))
+            {
+                String sqlHouseHoldName = "update household_account set password = ? where password = ?";
+                try {
+                    PreparedStatement ps = conn.prepareStatement(sqlHouseHoldName);
+                    ps.setString(1, newCellName);
+                    ps.setString(2, oldCellName);
+
+                    int checkInsert = ps.executeUpdate();
+
+                    if (checkInsert == 0) {
+                        throw new RuntimeException();
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (tableSelection.equals("location"))
+            {
+                String sqlHouseHoldName = "update household_account set location = ? where location = ?";
+                try {
+                    PreparedStatement ps = conn.prepareStatement(sqlHouseHoldName);
+                    ps.setString(1, newCellName);
+                    ps.setString(2, oldCellName);
+
+                    int checkInsert = ps.executeUpdate();
+
+                    if (checkInsert == 0) {
+                        throw new RuntimeException();
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }

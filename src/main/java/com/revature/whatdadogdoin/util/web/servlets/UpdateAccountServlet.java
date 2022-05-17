@@ -27,7 +27,7 @@ public class UpdateAccountServlet extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         UpdatePassIn updatePassIn = mapper.readValue(req.getInputStream(),UpdatePassIn.class);
-        HouseHoldAccount persistedAccountUpdate = houseHoldDao.returnUpdate(updatePassIn.getNewName(), updatePassIn.getOldName());
+        HouseHoldAccount persistedAccountUpdate = houseHoldDao.returnUpdate(updatePassIn.getTableSelection(), updatePassIn.getNewCellName(), updatePassIn.getOldCellName());
 
         String payload = mapper.writeValueAsString(persistedAccountUpdate);
 
