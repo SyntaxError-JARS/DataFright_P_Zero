@@ -8,6 +8,7 @@ com\revature\whatdadogdoin\util\web\dto\PassInDeleteUsername.class
 com\revature\whatdadogdoin\util\web\servlets\AccountServlet.class
 com\revature\whatdadogdoin\util\web\dto\UpdatePassIn.class
 com\revature\whatdadogdoin\util\web\dto\PassInStoryCreatePost.class
+com\revature\whatdadogdoin\util\web\dto\PassInDeleteStoryPost.class
 com\revature\whatdadogdoin\util\web\servlets\Authable.class
 com\revature\whatdadogdoin\models\HouseHoldAccount.class
 com\revature\whatdadogdoin\daos\StoryDao.class

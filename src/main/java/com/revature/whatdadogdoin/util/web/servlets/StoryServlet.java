@@ -6,6 +6,7 @@ import com.revature.whatdadogdoin.daos.HouseHoldDao;
 import com.revature.whatdadogdoin.daos.StoryDao;
 import com.revature.whatdadogdoin.models.HouseHoldAccount;
 import com.revature.whatdadogdoin.models.StoryModel;
+import com.revature.whatdadogdoin.util.web.dto.PassInDeleteStoryPost;
 import com.revature.whatdadogdoin.util.web.dto.PassInStoryCreatePost;
 
 import javax.servlet.http.HttpServlet;
@@ -35,7 +36,7 @@ public class StoryServlet extends HttpServlet {
             resp.getWriter().write("Added the story as seen down below \n");
             resp.getWriter().write(payload);
             resp.setStatus(201);
-        } catch (InvalidDefinitionException e){
+        } catch (InvalidDefinitionException e) {
             resp.setStatus(403);
             resp.getWriter().write(e.getMessage());
         }
@@ -43,4 +44,17 @@ public class StoryServlet extends HttpServlet {
 
     }
 
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        PassInDeleteStoryPost pass = mapper.readValue(req.getInputStream(), PassInDeleteStoryPost.class);
+
+        boolean testTrue = storyDao.delete(pass.getId());
+
+        String payload = mapper.writeValueAsString(testTrue);
+
+        resp.getWriter().write("Story Post was deleted, see true near bottom to verify \n");
+        resp.getWriter().write(payload);
+        resp.setStatus(201);
+
+    }
 }

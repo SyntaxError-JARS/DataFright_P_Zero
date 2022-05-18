@@ -43,4 +43,29 @@ public class StoryDao extends StoryModel {
         return null;
     }
 
+
+    public boolean delete(Integer id){
+        Connection conn = ConnectionFactory.getInstance().getConnection();{
+            String sql = "delete from my_posts where post_id = ?";
+
+            try {
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setInt(1, id);
+
+                int checkInsert = ps.executeUpdate();
+
+                if (checkInsert == 0){
+                    throw new RuntimeException();
+                }
+
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return false;
+    }
+
+
 }
