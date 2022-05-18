@@ -2,6 +2,7 @@ package com.revature.whatdadogdoin.util.web.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.whatdadogdoin.daos.HouseHoldDao;
+import com.revature.whatdadogdoin.daos.PostDao;
 import com.revature.whatdadogdoin.daos.StoryDao;
 import com.revature.whatdadogdoin.services.HouseHoldServices;
 import com.revature.whatdadogdoin.util.web.servlets.*;
@@ -20,6 +21,7 @@ public class ContextLoaderListener implements ServletContextListener {
         HouseHoldDao houseHoldDao = new HouseHoldDao();
         HouseHoldServices houseHoldServices = new HouseHoldServices();
         StoryDao storyDao = new StoryDao();
+        PostDao postDao = new PostDao();
 
         AuthServlet authServlet = new AuthServlet(houseHoldServices, houseHoldDao, mapper);
         AccountServlet accountServlet = new AccountServlet(houseHoldServices, houseHoldDao, mapper);
@@ -28,6 +30,7 @@ public class ContextLoaderListener implements ServletContextListener {
         UpdateAccountServlet updateAccountServlet = new UpdateAccountServlet(houseHoldServices, houseHoldDao, mapper);
         DeleteServlet deleteServlet = new DeleteServlet(houseHoldDao, mapper);
         StoryServlet storyServlet = new StoryServlet(storyDao, mapper);
+        PostServlet postServlet = new PostServlet(postDao, mapper);
 
         ServletContext context = sce.getServletContext();
         context.addServlet("AuthServlet", authServlet).addMapping("/auth");
@@ -37,6 +40,7 @@ public class ContextLoaderListener implements ServletContextListener {
         context.addServlet("UpdateAccountServlet", updateAccountServlet).addMapping("/update");
         context.addServlet("DeleteServlet", deleteServlet).addMapping("/delete");
         context.addServlet("StoryServlet", storyServlet).addMapping("/story");
+        context.addServlet("PostServlet", postServlet).addMapping("/post");
 
     }
 

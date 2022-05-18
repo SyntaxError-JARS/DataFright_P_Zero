@@ -1,5 +1,6 @@
 com\revature\whatdadogdoin\services\HouseHoldServicesTestSuite.class
 com\revature\whatdadogdoin\services\HouseHoldAccountUpdateTestSuite.class
+com\revature\whatdadogdoin\services\PostCreationTestSuite.class
 com\revature\whatdadogdoin\services\StoryCreationTestSuite.class
 com\revature\whatdadogdoin\util\ConnectionFactoryTestSuite.class
 com\revature\whatdadogdoin\services\HouseHoldServicesAuthLoginTestSuite.class

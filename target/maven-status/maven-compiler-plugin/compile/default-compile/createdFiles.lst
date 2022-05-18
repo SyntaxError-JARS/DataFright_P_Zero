@@ -5,8 +5,10 @@ com\revature\whatdadogdoin\exceptions\AuthenticationException.class
 com\revature\whatdadogdoin\util\web\dto\LoginCreds.class
 com\revature\whatdadogdoin\util\web\dto\PassInIDForStoryPost.class
 com\revature\whatdadogdoin\models\StoryModel.class
+com\revature\whatdadogdoin\util\web\dto\PassInCreateCommentPost.class
 com\revature\whatdadogdoin\util\web\dto\PassInDeleteUsername.class
 com\revature\whatdadogdoin\util\web\servlets\AccountServlet.class
+com\revature\whatdadogdoin\daos\PostDao.class
 com\revature\whatdadogdoin\util\web\dto\UpdatePassIn.class
 com\revature\whatdadogdoin\util\web\dto\PassInStoryCreatePost.class
 com\revature\whatdadogdoin\util\web\dto\PassInDeleteStoryPost.class
@@ -15,6 +17,7 @@ com\revature\whatdadogdoin\models\HouseHoldAccount.class
 com\revature\whatdadogdoin\daos\StoryDao.class
 com\revature\whatdadogdoin\util\logging\Logger.class
 com\revature\whatdadogdoin\util\web\servlets\DeleteServlet.class
+com\revature\whatdadogdoin\util\web\servlets\PostServlet.class
 com\revature\whatdadogdoin\daos\Crundable.class
 com\revature\whatdadogdoin\util\web\servlets\AuthServlet.class
 com\revature\whatdadogdoin\util\web\servlets\CreateServlet.class
@@ -23,4 +26,5 @@ com\revature\whatdadogdoin\exceptions\ResourcePersistenceException.class
 com\revature\whatdadogdoin\daos\HouseHoldDao.class
 com\revature\whatdadogdoin\util\web\util\ContextLoaderListener.class
 com\revature\whatdadogdoin\services\HouseHoldServices.class
+com\revature\whatdadogdoin\models\PostModel.class
 com\revature\whatdadogdoin\util\web\servlets\StoryServlet.class
