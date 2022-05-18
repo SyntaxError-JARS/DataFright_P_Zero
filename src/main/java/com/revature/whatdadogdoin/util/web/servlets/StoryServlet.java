@@ -7,6 +7,7 @@ import com.revature.whatdadogdoin.daos.StoryDao;
 import com.revature.whatdadogdoin.models.HouseHoldAccount;
 import com.revature.whatdadogdoin.models.StoryModel;
 import com.revature.whatdadogdoin.util.web.dto.PassInDeleteStoryPost;
+import com.revature.whatdadogdoin.util.web.dto.PassInIDForStoryPost;
 import com.revature.whatdadogdoin.util.web.dto.PassInStoryCreatePost;
 
 import javax.servlet.http.HttpServlet;
@@ -46,7 +47,7 @@ public class StoryServlet extends HttpServlet {
 
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-        PassInDeleteStoryPost pass = mapper.readValue(req.getInputStream(), PassInDeleteStoryPost.class);
+        PassInIDForStoryPost pass = mapper.readValue(req.getInputStream(), PassInIDForStoryPost.class);
 
         boolean testTrue = storyDao.delete(pass.getId());
 
@@ -56,5 +57,17 @@ public class StoryServlet extends HttpServlet {
         resp.getWriter().write(payload);
         resp.setStatus(201);
 
+    }
+
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        PassInIDForStoryPost pass = mapper.readValue(req.getInputStream(), PassInIDForStoryPost.class);
+        StoryModel addedLike = storyDao.likePost(pass.getId());
+
+        String payload = mapper.writeValueAsString(addedLike);
+
+        resp.getWriter().write("Persisted the update provided to the post and added a like \n");
+        resp.getWriter().write(payload);
+        resp.setStatus(201);
     }
 }

@@ -67,5 +67,27 @@ public class StoryDao extends StoryModel {
         return false;
     }
 
+    public StoryModel likePost(Integer id){
+
+        Connection conn = ConnectionFactory.getInstance().getConnection();{
+            String sql = "update my_posts set like_count = like_count + 1 where post_id = ?";
+
+            try {
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setInt(1, id);
+
+                int checkInsert = ps.executeUpdate();
+
+                if (checkInsert == 0){
+                    throw new RuntimeException();
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return null;
+    }
 
 }

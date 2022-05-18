@@ -3,6 +3,7 @@ com\revature\whatdadogdoin\exceptions\InvalidRequestException.class
 com\revature\whatdadogdoin\util\web\servlets\TestServlet.class
 com\revature\whatdadogdoin\exceptions\AuthenticationException.class
 com\revature\whatdadogdoin\util\web\dto\LoginCreds.class
+com\revature\whatdadogdoin\util\web\dto\PassInIDForStoryPost.class
 com\revature\whatdadogdoin\models\StoryModel.class
 com\revature\whatdadogdoin\util\web\dto\PassInDeleteUsername.class
 com\revature\whatdadogdoin\util\web\servlets\AccountServlet.class
