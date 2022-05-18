@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static com.revature.whatdadogdoin.util.web.servlets.Authable.checkAuth;
+
 public class DeleteServlet extends HttpServlet {
 
     private final HouseHoldDao houseHoldDao;
@@ -22,6 +24,8 @@ public class DeleteServlet extends HttpServlet {
     }
 
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        if(!checkAuth(req, resp)) return;
 
         PassInDeleteUsername pass = mapper.readValue(req.getInputStream(), PassInDeleteUsername.class);
 

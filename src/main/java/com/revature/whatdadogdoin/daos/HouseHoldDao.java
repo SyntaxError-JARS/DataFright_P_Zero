@@ -206,7 +206,6 @@ public class HouseHoldDao implements Crundable<HouseHoldAccount> {
         return null;
     }
 
-    // TODO: implement update for deliverable
     @Override
     public boolean update(HouseHoldAccount updatedAccount) {
 

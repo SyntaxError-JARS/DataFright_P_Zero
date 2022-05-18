@@ -1,8 +1,11 @@
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\servlets\TestServlet.java
+C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\dto\PassInStoryCreatePost.java
+C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\servlets\StoryServlet.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\servlets\UpdateAccountServlet.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\servlets\DeleteServlet.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\util\ContextLoaderListener.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\daos\HouseHoldDao.java
+C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\daos\StoryDao.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\logging\Logger.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\servlets\AuthServlet.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\models\HouseHoldAccount.java
@@ -16,5 +19,6 @@ C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\servlets\CreateServlet.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\services\HouseHoldServices.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\dto\PassInDeleteUsername.java
+C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\models\StoryModel.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\dto\UpdatePassIn.java
 C:\Users\sirsw\IdeaProjects\project[0]\src\main\java\com\revature\whatdadogdoin\util\web\servlets\Authable.java

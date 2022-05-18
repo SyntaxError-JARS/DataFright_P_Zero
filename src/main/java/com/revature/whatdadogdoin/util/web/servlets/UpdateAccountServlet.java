@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static com.revature.whatdadogdoin.util.web.servlets.Authable.checkAuth;
+
 public class UpdateAccountServlet extends HttpServlet {
 
     private final HouseHoldServices houseHoldServices;
@@ -25,6 +27,8 @@ public class UpdateAccountServlet extends HttpServlet {
     }
 
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        if(!checkAuth(req, resp)) return;
 
         UpdatePassIn updatePassIn = mapper.readValue(req.getInputStream(),UpdatePassIn.class);
         HouseHoldAccount persistedAccountUpdate = houseHoldDao.returnUpdate(updatePassIn.getTableSelection(), updatePassIn.getNewCellName(), updatePassIn.getOldCellName());
